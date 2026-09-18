@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tabletop Club | Premium Board Game Lounge & Miniature Sanctuary Hyderabad</title>
+  <meta name="description" content="Hyderabad's ultimate board gaming lounge and miniatures sanctuary in Jubilee Hills. 1200+ games, Game Masters, artisan cafe, and private gaming vaults.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- CSS Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- STRAIGHT FLOATING NAVBAR -->
+  <div class="straight-navbar-wrapper">
+    <header class="straight-navbar" id="straightNav">
+      <!-- Brand Logo -->
+      <a href="index.html" class="straight-brand" id="brandLogo">
+        <div class="straight-logo-icon">
+          <i data-lucide="shield-alert" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="straight-brand-text">
+          <span>THE TABLETOP CLUB</span>
+          <span class="straight-brand-sub">Jubilee Hills • Hyderabad</span>
+        </div>
+      </a>
+
+      <!-- Straight Navigation Links with Icons (Desktop) -->
+      <ul class="straight-nav-links">
+        <li>
+          <a href="#games" class="straight-nav-item active">
+            <i data-lucide="dices"></i>
+            <span>Games</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experience" class="straight-nav-item">
+            <i data-lucide="users"></i>
+            <span>Experience</span>
+          </a>
+        </li>
+        <li>
+          <a href="#food" class="straight-nav-item">
+            <i data-lucide="utensils"></i>
+            <span>Menu</span>
+          </a>
+        </li>
+        <li>
+          <a href="#miniatures" class="straight-nav-item">
+            <i data-lucide="shield"></i>
+            <span>Miniatures</span>
+          </a>
+        </li>
+        <li>
+          <a href="#events" class="straight-nav-item">
+            <i data-lucide="calendar"></i>
+            <span>Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="#reviews" class="straight-nav-item">
+            <i data-lucide="star"></i>
+            <span>Reviews</span>
+          </a>
+        </li>
+        <li>
+          <a href="#gallery" class="straight-nav-item">
+            <i data-lucide="image"></i>
+            <span>Gallery</span>
+          </a>
+        </li>
+        <li>
+          <a href="#location" class="straight-nav-item">
+            <i data-lucide="map-pin"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Action Controls (RTL, Theme Switcher, Cart, Table Booking) -->
+      <div class="straight-controls">
+        <!-- RTL Switcher Button -->
+        <button class="ctrl-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+          <i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i>
+        </button>
+
+        <!-- Theme Change Button -->
+        <button class="ctrl-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i>
+          <span>Theme</span>
+        </button>
+
+        <!-- Reserve Table CTA -->
+        <a href="#location" class="ctrl-btn ctrl-btn-reserve reserve-table-trigger">
+          <i data-lucide="calendar-check" style="width:14px;height:14px;"></i>
+          <span>Book Table</span>
+        </a>
+      </div>
+
+      <!-- Hamburger Button for Mobile / Tablet <=1024px -->
+      <button class="straight-hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+  </div>
+
+  <!-- MOBILE / TABLET DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <a href="index.html" class="straight-brand">
+        <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:18px;height:18px;"></i></div>
+        <div class="straight-brand-text">
+          <span>THE TABLETOP CLUB</span>
+          <span class="straight-brand-sub">Clubhouse Portal</span>
+        </div>
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+    </div>
+
+    <div class="drawer-search-box">
+      <input type="text" class="drawer-search-input" placeholder="Search games, food, events...">
+      <i data-lucide="search" class="drawer-search-icon" style="width:18px;height:18px;"></i>
+    </div>
+
+    <ul class="drawer-nav-list">
+      <li><a href="#games" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>01. Games Library</span><span class="number">1200+</span></a></li>
+      <li><a href="#experience" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>02. Experience</span><span class="number">CLUB</span></a></li>
+      <li><a href="#food" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>03. Gourmet Menu</span><span class="number">CAFE</span></a></li>
+      <li><a href="#miniatures" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>04. Miniature Studio</span><span class="number">PAINT</span></a></li>
+      <li><a href="#events" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>05. Weekly Events</span><span class="number">CALENDAR</span></a></li>
+      <li><a href="#reviews" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>06. Reviews</span><span class="number">4.9★</span></a></li>
+      <li><a href="#gallery" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>07. Photo Gallery</span><span class="number">LOOKS</span></a></li>
+      <li><a href="#location" class="drawer-nav-link" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');"><span>08. Contact & Map</span><span class="number">HYD</span></a></li>
+    </ul>
+
+    <!-- Controls in Mobile Drawer -->
+    <div class="d-flex gap-2 mb-4">
+      <button class="ctrl-btn rtl-toggle-btn flex-grow-1" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL">
+        <i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i>
+      </button>
+      <button class="ctrl-btn theme-toggle-btn flex-grow-1">
+        <i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i>
+        <span>Theme</span>
+      </button>
+    </div>
+
+    <button class="btn-primary-club w-100 reserve-table-trigger mb-3">
+      <i data-lucide="calendar-check" style="width:16px;height:16px;"></i> Reserve A Table Tonight
+    </button>
+  </aside>
+
+  <!-- CART SLIDEOVER -->
+  <aside class="cart-drawer-slideover" id="cartSlideover">
+    <div class="drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i data-lucide="shopping-bag" style="color:var(--accent-copper);width:22px;height:22px;"></i>
+        <h3 style="font-size:1.15rem;margin:0;font-family:var(--font-display);">Collection Satchel</h3>
+      </div>
+      <button class="drawer-close-btn" id="cartCloseBtn"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList"></div>
+    <div style="border-top:1px solid var(--border-subtle);padding-top:20px;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span style="color:var(--text-muted);font-size:0.9rem;">Estimated Total:</span>
+        <strong id="cartSubtotal" style="font-family:var(--font-display);font-size:1.3rem;color:var(--accent-copper);">$0.00</strong>
+      </div>
+      <button class="btn-primary-club w-100" onclick="showToast('Proceeding to checkout...', 'success')">Secure Checkout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- 01. CINEMATIC HERO SECTION (GET ON BOARD INSPIRED) -->
+    <section class="lounge-hero">
+      <video class="lounge-hero-video" autoplay muted loop playsinline>
+        <source src="videos/142804-780943539_medium.mp4" type="video/mp4">
+        <source src="videos/12946396_1920_1080_60fps.mp4" type="video/mp4">
+      </video>
+      <div class="lounge-hero-overlay"></div>
+
+      <div class="container position-relative z-3" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="hero-eyebrow-line">
+          <span>WHERE EVERY TABLE TELLS A STORY</span>
+        </div>
+
+        <h1 class="lounge-hero-title">
+          THE TABLETOP CLUB
+        </h1>
+
+        <p class="lounge-hero-sub">
+          India's Ultimate Board Gaming Destination & Miniature Sanctuary
+          <span class="hero-tagline-gold">
+            1200+ Games • Dedicated Game Masters • Gourmet Cafe • Jubilee Hills
+          </span>
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#games" class="btn-primary-club" style="padding:14px 36px;">
+            <i data-lucide="dices" style="width:18px;height:18px;"></i> Explore Games
+          </a>
+          <a href="#experience" class="btn-secondary-club" style="padding:14px 36px;">
+            <i data-lucide="users" style="width:18px;height:18px;"></i> The Experience
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. METRICS COUNTER STRIP (4 KEY STATS) -->
+    <section class="metrics-strip">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Stat 1 -->
+          <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="metric-card-box">
+              <div class="metric-icon-wrap">
+                <i data-lucide="book-open" style="width:24px;height:24px;"></i>
+              </div>
+              <div class="metric-big-num">1200+</div>
+              <div class="metric-label-title">Premium Board Games</div>
+              <p style="font-size:0.85rem;margin:0;">From family classics to heavy strategic imports.</p>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="metric-card-box">
+              <div class="metric-icon-wrap">
+                <i data-lucide="message-square" style="width:24px;height:24px;"></i>
+              </div>
+              <div class="metric-big-num">500+</div>
+              <div class="metric-label-title">Google Reviews</div>
+              <p style="font-size:0.85rem;margin:0;">Consistently top-rated by Hyderabad gamers.</p>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="metric-card-box">
+              <div class="metric-icon-wrap">
+                <i data-lucide="star" style="width:24px;height:24px;"></i>
+              </div>
+              <div class="metric-big-num">4.9 ★</div>
+              <div class="metric-label-title">Average Rating</div>
+              <p style="font-size:0.85rem;margin:0;">High-end customer hospitality and Game Masters.</p>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="metric-card-box">
+              <div class="metric-icon-wrap">
+                <i data-lucide="heart" style="width:24px;height:24px;"></i>
+              </div>
+              <div class="metric-big-num">25K+</div>
+              <div class="metric-label-title">Happy Players</div>
+              <p style="font-size:0.85rem;margin:0;">Unforgettable campaigns, laughs, and victories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. EXPERIENCE SECTION ("MORE THAN A CAFE") -->
+    <section id="experience" class="py-5 my-5">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle);box-shadow:var(--shadow-card);width:100%;min-height:360px;height:100%;max-height:540px;position:relative;">
+              <img src="image/pexels-stephen-hardy-32566714-7018123.jpg" alt="Tabletop Gaming Lounge Experience" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+              <div style="position:absolute;bottom:20px;left:20px;right:20px;background:var(--bg-glass);backdrop-filter:blur(12px);border:1px solid var(--border-copper);padding:16px 20px;border-radius:var(--radius-md);">
+                <div style="font-size:0.75rem;font-weight:700;color:var(--accent-copper);text-transform:uppercase;">THE CLUBHOUSE VIBE</div>
+                <div style="font-size:0.95rem;color:var(--text-primary);font-weight:700;">Warm Lighting • Solid Oak Tables • Artisan Drinks</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="section-eyebrow">MORE THAN A CAFE</span>
+            <h2 class="section-title">This is not just a cafe. It's an experience.</h2>
+            <div class="copper-divider"></div>
+            <p style="font-size:1rem;margin-bottom:28px;">
+              Step into a premium, custom-curated social club where board gaming is treated as an art. Our focus is on high-end hospitality, human connection, and unforgettable memories.
+            </p>
+
+            <div class="d-flex flex-column gap-3">
+              <div class="experience-grid-item">
+                <div class="experience-item-icon"><i data-lucide="user-check"></i></div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px;">Dedicated Game Masters</h4>
+                  <p style="font-size:0.85rem;margin:0;">Our friendly experts explain any game's setup and rules, getting your party playing in under 5 minutes.</p>
+                </div>
+              </div>
+
+              <div class="experience-grid-item">
+                <div class="experience-item-icon"><i data-lucide="compass"></i></div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px;">Beginner Friendly</h4>
+                  <p style="font-size:0.85rem;margin:0;">Zero prior tabletop experience required. We match the perfect game to your party's vibe and group size.</p>
+                </div>
+              </div>
+
+              <div class="experience-grid-item">
+                <div class="experience-item-icon"><i data-lucide="heart"></i></div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px;">Family Friendly & Date Nights</h4>
+                  <p style="font-size:0.85rem;margin:0;">Warm ambient lighting, delicious gourmet pairings, and social party games suitable for all age groups.</p>
+                </div>
+              </div>
+
+              <div class="experience-grid-item">
+                <div class="experience-item-icon"><i data-lucide="award"></i></div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px;">Team Bonding & Corporate Events</h4>
+                  <p style="font-size:0.85rem;margin:0;">Break organizational silos and build genuine connection through collaborative tabletop problem solving.</p>
+                </div>
+              </div>
+
+              <div class="experience-grid-item">
+                <div class="experience-item-icon"><i data-lucide="brush"></i></div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px;">Miniature Painting Sanctuary</h4>
+                  <p style="font-size:0.85rem;margin:0;">Fully equipped hobby stations with Kolinsky brushes, wet palettes, acrylic glazes, and scenic basing materials.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. CURATED GAME LIBRARY SECTION (1200+ TITLES) -->
+    <section id="games" class="py-5" style="background:var(--bg-obsidian);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+      <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-eyebrow">EXPLORE 1200+ TITLES</span>
+          <h2 class="section-title">Curated Game Library</h2>
+          <div class="copper-divider center"></div>
+          <p class="section-subtitle">
+            From quick party games to epic heavy strategy campaigns, our Game Masters will set up the perfect match for your table.
+          </p>
+
+          <!-- Category Switcher Buttons -->
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <button class="filter-chip home-cat-tab-btn active" data-category="all">All Games</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="strategy">Strategy Games</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="party">Party Games</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="family">Family Games</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="card">Card Games</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="rpg">Adventure & RPG</button>
+            <button class="filter-chip home-cat-tab-btn" data-category="miniatures">Miniatures</button>
+          </div>
+        </div>
+
+        <!-- Distinct Game Cards Grid (NO REPEATED IMAGES) -->
+        <div class="row g-4" id="homeGamesGrid">
+          <!-- Card 1: Strategy -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="strategy" data-aos="fade-up" data-aos-delay="100">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/boardgame_dune.jpg" alt="Aethelred High Realm Strategy" class="game-card-img" loading="lazy">
+                <span class="badge-editorial" style="position:absolute;top:12px;left:12px;">STRATEGY</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">TABLE 04</span>
+              </div>
+              <div style="padding:24px;display:flex;flex-direction:column;flex-grow:1;">
+                <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:8px;">Aethelred: High Realm</h3>
+                <p style="font-size:0.85rem;margin-bottom:12px;">Immerse yourself in territorial governance, resource engine planning, and tactical alliances.</p>
+                
+                <!-- Circular Experience Gauges -->
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="18"/></svg>
+                      <span class="gauge-percent-text">85%</span>
+                    </div>
+                    <span class="gauge-label">Strategy</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="34"/></svg>
+                      <span class="gauge-percent-text">70%</span>
+                    </div>
+                    <span class="gauge-label">Tactics</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="12"/></svg>
+                      <span class="gauge-percent-text">90%</span>
+                    </div>
+                    <span class="gauge-label">Replay</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="28"/></svg>
+                      <span class="gauge-percent-text">75%</span>
+                    </div>
+                    <span class="gauge-label">Depth</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="users" style="width:14px;height:14px;display:inline-block;"></i> 3–4 Players</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-1', name:'Aethelred: High Realm', price:84.00, image:'image/boardgame_dune.jpg'})">
+                    Collect $84
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Adventure & RPG -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="rpg" data-aos="fade-up" data-aos-delay="200">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/boardgame_frosthaven.jpg" alt="Abyssal Descent Dungeon Delve" class="game-card-img" loading="lazy">
+                <span class="badge-editorial badge-crimson" style="position:absolute;top:12px;left:12px;">ADVENTURE RPG</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">TABLE 07</span>
+              </div>
+              <div class="game-card-body">
+                <h3>Abyssal Descent: Catacombs</h3>
+                <p>Cooperative campaign delve with 64 miniatures, fog-of-war map hexes, and boss encounters.</p>
+                
+                <!-- Circular Experience Gauges -->
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="10"/></svg>
+                      <span class="gauge-percent-text">92%</span>
+                    </div>
+                    <span class="gauge-label">Narrative</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="14"/></svg>
+                      <span class="gauge-percent-text">88%</span>
+                    </div>
+                    <span class="gauge-label">Co-op</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="6"/></svg>
+                      <span class="gauge-percent-text">95%</span>
+                    </div>
+                    <span class="gauge-label">Replay</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="12"/></svg>
+                      <span class="gauge-percent-text">90%</span>
+                    </div>
+                    <span class="gauge-label">Combat</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="users" style="width:14px;height:14px;display:inline-block;"></i> 1–4 Players</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-2', name:'Abyssal Descent: Catacombs', price:135.00, image:'image/boardgame_frosthaven.jpg'})">
+                    Collect $135
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Miniatures -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="miniatures" data-aos="fade-up" data-aos-delay="300">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/hero_miniature.jpg" alt="Obsidian Citadel Knight Miniature" class="game-card-img" loading="lazy">
+                <span class="badge-editorial" style="position:absolute;top:12px;left:12px;">MINIATURE</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">STUDIO 01</span>
+              </div>
+              <div class="game-card-body">
+                <h3>The Obsidian Knight (28mm)</h3>
+                <p>Multi-part high-density resin miniature with scenic fortress base and alternate weapons.</p>
+                
+                <!-- Circular Experience Gauges -->
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="4"/></svg>
+                      <span class="gauge-percent-text">98%</span>
+                    </div>
+                    <span class="gauge-label">Detail</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="18"/></svg>
+                      <span class="gauge-percent-text">85%</span>
+                    </div>
+                    <span class="gauge-label">Resin</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="12"/></svg>
+                      <span class="gauge-percent-text">90%</span>
+                    </div>
+                    <span class="gauge-label">Display</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="24"/></svg>
+                      <span class="gauge-percent-text">80%</span>
+                    </div>
+                    <span class="gauge-label">Wargame</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="shield" style="width:14px;height:14px;display:inline-block;"></i> 28mm Scale</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-3', name:'The Obsidian Knight (28mm)', price:42.00, image:'image/hero_miniature.jpg'})">
+                    Collect $42
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Party Games -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="party" data-aos="fade-up" data-aos-delay="100">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/tabletop-gaming-fun-stockcake.jpg" alt="Party Board Game Fun" class="game-card-img" loading="lazy">
+                <span class="badge-editorial" style="position:absolute;top:12px;left:12px;">PARTY GAME</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">TABLE 09</span>
+              </div>
+              <div class="game-card-body">
+                <h3>Tavern Brawl: Chaos Night</h3>
+                <p>Fast, hilarious party game of bluffing, tavern brawls, and social laughter for large groups.</p>
+                
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="6"/></svg>
+                      <span class="gauge-percent-text">95%</span>
+                    </div>
+                    <span class="gauge-label">Social</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="4"/></svg>
+                      <span class="gauge-percent-text">98%</span>
+                    </div>
+                    <span class="gauge-label">Fun</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="10"/></svg>
+                      <span class="gauge-percent-text">92%</span>
+                    </div>
+                    <span class="gauge-label">Easy</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="14"/></svg>
+                      <span class="gauge-percent-text">88%</span>
+                    </div>
+                    <span class="gauge-label">Pacing</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="users" style="width:14px;height:14px;display:inline-block;"></i> 4–10 Players</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-party-1', name:'Tavern Brawl: Chaos Night', price:29.00, image:'image/tabletop-gaming-fun-stockcake.jpg'})">
+                    Collect $29
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Card Games -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/ralf1403-playing-cards-9322164_1920.jpg" alt="Grimwarden Card Duel" class="game-card-img" loading="lazy">
+                <span class="badge-editorial" style="position:absolute;top:12px;left:12px;">CARD DUEL</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">TABLE 02</span>
+              </div>
+              <div class="game-card-body">
+                <h3>Grimwarden: Duel of Blades</h3>
+                <p>Rapid tactical combat stance drafting and stamina management in a 20-minute duel.</p>
+                
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="14"/></svg>
+                      <span class="gauge-percent-text">88%</span>
+                    </div>
+                    <span class="gauge-label">Tactics</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="8"/></svg>
+                      <span class="gauge-percent-text">94%</span>
+                    </div>
+                    <span class="gauge-label">Fast</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="12"/></svg>
+                      <span class="gauge-percent-text">90%</span>
+                    </div>
+                    <span class="gauge-label">Replay</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="18"/></svg>
+                      <span class="gauge-percent-text">85%</span>
+                    </div>
+                    <span class="gauge-label">Portability</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="users" style="width:14px;height:14px;display:inline-block;"></i> 2 Players</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-card-1', name:'Grimwarden: Duel of Blades', price:28.00, image:'image/ralf1403-playing-cards-9322164_1920.jpg'})">
+                    Collect $28
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Family Games -->
+          <div class="col-lg-4 col-md-6 col-12 d-flex home-game-card-col" data-category="family" data-aos="fade-up" data-aos-delay="300">
+            <div class="lounge-game-card w-100">
+              <div class="game-card-img-frame">
+                <img src="image/bru-no-chess-4794265_1920.jpg" alt="Family Strategy Board Game" class="game-card-img" loading="lazy">
+                <span class="badge-editorial" style="position:absolute;top:12px;left:12px;">FAMILY CLASSIC</span>
+                <span class="badge-table" style="position:absolute;top:12px;right:12px;">TABLE 06</span>
+              </div>
+              <div class="game-card-body">
+                <h3>Valeria: Guildhall Artisans</h3>
+                <p>Relaxing dice-drafting and medieval workshop building suitable for parents, teens, and couples.</p>
+                
+                <div class="circular-gauge-container">
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="6"/></svg>
+                      <span class="gauge-percent-text">95%</span>
+                    </div>
+                    <span class="gauge-label">Family</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="12"/></svg>
+                      <span class="gauge-percent-text">90%</span>
+                    </div>
+                    <span class="gauge-label">Rules</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="14"/></svg>
+                      <span class="gauge-percent-text">88%</span>
+                    </div>
+                    <span class="gauge-label">Visuals</span>
+                  </div>
+                  <div class="gauge-item">
+                    <div class="gauge-svg-wrap">
+                      <svg viewBox="0 0 48 48"><circle class="bg-circle" cx="24" cy="24" r="18"/><circle class="val-circle" cx="24" cy="24" r="18" stroke-dasharray="113" stroke-dashoffset="18"/></svg>
+                      <span class="gauge-percent-text">85%</span>
+                    </div>
+                    <span class="gauge-label">Pacing</span>
+                  </div>
+                </div>
+
+                <div class="game-card-footer">
+                  <div style="font-size:0.8rem;color:var(--text-dim);"><i data-lucide="users" style="width:14px;height:14px;display:inline-block;"></i> 2–5 Players</div>
+                  <button class="btn-primary-club" onclick="CartManager.addItem({id:'prod-family-1', name:'Valeria: Guildhall Artisans', price:49.00, image:'image/bru-no-chess-4794265_1920.jpg'})">
+                    Collect $49
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. GOURMET FOOD & DRINKS MENU (CAFE SECTION) -->
+    <section id="food" class="py-5 my-5">
+      <div class="container py-4">
+        <div class="row align-items-center g-5 mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="section-eyebrow">GOURMET FOOD & BEVERAGES</span>
+            <h2 class="section-title">Crafted To Pair With Gaming</h2>
+            <div class="copper-divider"></div>
+            <p style="font-size:1rem;color:var(--text-muted);">
+              Finger-friendly artisan food designed so you never smudge cards or miniatures. Fresh sourdough pizzas, truffle bites, nitro cold brews, and mocktails.
+            </p>
+          </div>
+          <div class="col-lg-6 text-lg-end" data-aos="fade-left">
+            <span class="badge-editorial"><i data-lucide="coffee"></i> FULL SERVICE TO YOUR TABLE</span>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Food Item 1 -->
+          <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="food-card-item">
+              <img src="image/pexels-polina-tankilevitch-5257334.jpg" alt="Artisan Truffle Fries" class="food-card-thumb">
+              <h4>Black Truffle & Parmesan Fries</h4>
+              <strong style="color:var(--accent-copper);font-size:1.15rem;display:block;margin-bottom:6px;">$8.50</strong>
+              <p>Hand-cut russet potatoes tossed with Italian black truffle oil, rosemary, and shaved aged parmesan.</p>
+              <button class="btn-primary-club" onclick="CartManager.addItem({id:'food-1', name:'Black Truffle Fries', price:8.50, image:'image/pexels-polina-tankilevitch-5257334.jpg'})">
+                <i data-lucide="plus" style="width:14px;height:14px;"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Food Item 2 -->
+          <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="food-card-item">
+              <img src="image/pexels-faruktokluoglu-20197043.jpg" alt="Neapolitan Sourdough Pizza" class="food-card-thumb">
+              <h4>Sovereign Vault Sourdough Pizza</h4>
+              <strong style="color:var(--accent-copper);font-size:1.15rem;display:block;margin-bottom:6px;">$16.00</strong>
+              <p>48-hour fermented dough, San Marzano tomato pomodoro, fresh fior di latte, and sweet basil leaves.</p>
+              <button class="btn-primary-club" onclick="CartManager.addItem({id:'food-2', name:'Sovereign Sourdough Pizza', price:16.00, image:'image/pexels-faruktokluoglu-20197043.jpg'})">
+                <i data-lucide="plus" style="width:14px;height:14px;"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Food Item 3 -->
+          <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="food-card-item">
+              <img src="image/pexels-annashoots-37983585.jpg" alt="Smoked Paprika Sliders" class="food-card-thumb">
+              <h4>Tavern Gourmet Sliders (Trio)</h4>
+              <strong style="color:var(--accent-copper);font-size:1.15rem;display:block;margin-bottom:6px;">$14.50</strong>
+              <p>Brioche sliders with caramelised shallots, smoked cheddar, house-smoked paprika garlic aioli.</p>
+              <button class="btn-primary-club" onclick="CartManager.addItem({id:'food-3', name:'Tavern Gourmet Sliders', price:14.50, image:'image/pexels-annashoots-37983585.jpg'})">
+                <i data-lucide="plus" style="width:14px;height:14px;"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Food Item 4 -->
+          <div class="col-lg-6 col-12" data-aos="fade-up" data-aos-delay="400">
+            <div class="food-card-item">
+              <img src="image/pexels-chris-r-2147603956-32868382.jpg" alt="Cold Brew Nitro Draught" class="food-card-thumb">
+              <h4>Nitro Cold Brew & Butter Mead</h4>
+              <strong style="color:var(--accent-copper);font-size:1.15rem;display:block;margin-bottom:6px;">$6.50</strong>
+              <p>Velvet nitrogen-infused single-origin Arabica coffee topped with caramel cream foam.</p>
+              <button class="btn-primary-club" onclick="CartManager.addItem({id:'food-4', name:'Nitro Cold Brew Mead', price:6.50, image:'image/pexels-chris-r-2147603956-32868382.jpg'})">
+                <i data-lucide="plus" style="width:14px;height:14px;"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. MINIATURE STUDIO (BEFORE / AFTER COMPARISON SLIDER) -->
+    <section id="miniatures" class="py-5" style="background:var(--bg-obsidian);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+      <div class="container py-4">
+        <div class="text-center mb-4" data-aos="fade-up">
+          <span class="section-eyebrow">MINIATURE PAINTING SANCTUARY</span>
+          <h2 class="section-title">Before & After: The Artisan Finish</h2>
+          <div class="copper-divider center"></div>
+          <p class="section-subtitle">Drag the copper divider below to reveal the brushwork transformation.</p>
+        </div>
+
+        <div class="before-after-container" id="beforeAfterSlider" data-aos="zoom-in">
+          <!-- BEFORE (Raw Sculpt) -->
+          <div class="ba-image-layer ba-image-before" style="background-image: url('image/boardgame_frosthaven.jpg');"></div>
+          <span class="ba-badge-label ba-label-before">BEFORE: RAW RESIN</span>
+
+          <!-- AFTER (Master Paintjob) -->
+          <div class="ba-image-layer ba-image-after" id="baAfterLayer" style="background-image: url('image/hero_miniature.jpg'); width: 50%;">
+            <span class="ba-badge-label ba-label-after">AFTER: MASTER PAINTED</span>
+          </div>
+
+          <!-- DRAGGABLE HANDLE -->
+          <div class="ba-slider-handle" id="baSliderHandle" style="left: 50%;">
+            <div class="ba-handle-knob"><i data-lucide="move-horizontal" style="width:18px;height:18px;"></i></div>
+          </div>
+        </div>
+
+        <div class="text-center mt-3">
+          <span style="font-size:0.75rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;">
+            <i data-lucide="hand" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Drag slider left / right to inspect fine details
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. WEEKLY CLUBHOUSE EVENTS & TOURNAMENTS -->
+    <section id="events" class="py-5 my-5">
+      <div class="container py-4">
+        <div class="text-center section-header-editorial" data-aos="fade-up">
+          <span class="section-eyebrow">THIS WEEK AT JUBILEE HILLS</span>
+          <h2 class="section-title">Game Nights & Tournaments</h2>
+          <div class="copper-divider center"></div>
+          <p class="section-subtitle">Pull up a chair. Book your seat in advance to secure table placement.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Event 1 -->
+          <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="calendar-editorial-card">
+              <div class="event-date-block">
+                <div class="event-day-badge">FRI 19</div>
+                <div class="event-time-badge"><i data-lucide="clock" style="width:14px;height:14px;color:var(--accent-copper);"></i> 7:00 PM – 11:30 PM</div>
+              </div>
+              <div class="event-card-body">
+                <span class="badge-editorial mb-2">RPG NIGHT</span>
+                <h3 class="event-title">The Sunken Vault of Xal-Khor</h3>
+                <p class="event-description">Tier-2 D&D campaign delve hosted by Game Master Kaelen. Pre-gen sheets and dice trays provided.</p>
+                <div class="event-meta-footer">
+                  <div class="event-seats-status"><span class="pulse-dot"></span> 4 Seats Left</div>
+                  <button class="btn-reserve-header reserve-table-trigger">RSVP $15</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="calendar-editorial-card">
+              <div class="event-date-block">
+                <div class="event-day-badge">SAT 20</div>
+                <div class="event-time-badge"><i data-lucide="clock" style="width:14px;height:14px;color:var(--accent-copper);"></i> 1:00 PM – 8:00 PM</div>
+              </div>
+              <div class="event-card-body">
+                <span class="badge-editorial badge-crimson mb-2">WARHAMMER TOURNAMENT</span>
+                <h3 class="event-title">Saturday 2,000pt Invitational</h3>
+                <p class="event-description">3-round Swiss tournament on high-density scenic tables with official clocks and trophy plaques.</p>
+                <div class="event-meta-footer">
+                  <div class="event-seats-status"><span class="pulse-dot"></span> 3 Seats Left</div>
+                  <button class="btn-reserve-header reserve-table-trigger">RSVP $25</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="calendar-editorial-card">
+              <div class="event-date-block">
+                <div class="event-day-badge">SUN 21</div>
+                <div class="event-time-badge"><i data-lucide="clock" style="width:14px;height:14px;color:var(--accent-copper);"></i> 5:00 PM – 9:00 PM</div>
+              </div>
+              <div class="event-card-body">
+                <span class="badge-editorial mb-2">PAINT & SIP</span>
+                <h3 class="event-title">Sunday Paint Night: Non-Metallic Metals</h3>
+                <p class="event-description">Guided miniature painting clinic on light reflections and glazing. Includes miniature and craft beverage.</p>
+                <div class="event-meta-footer">
+                  <div class="event-seats-status"><span class="pulse-dot"></span> 2 Seats Left</div>
+                  <button class="btn-reserve-header reserve-table-trigger">RSVP $30</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. REVIEWS & PLAYER TESTIMONIALS -->
+    <section id="reviews" class="py-5" style="background:var(--bg-obsidian);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+      <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-eyebrow">GOOGLE REVIEWS & REPUTATION</span>
+          <h2 class="section-title">Loved By Hyderabad Gamers</h2>
+          <div class="copper-divider center"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div style="background:var(--bg-surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:28px;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;">
+              <div class="d-flex align-items-center justify-content-center gap-1 mb-3" style="color:var(--accent-copper);">
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+              </div>
+              <p style="font-size:0.9rem;font-style:italic;color:var(--text-parchment);margin-bottom:16px;text-align:center;">
+                "The Game Masters here are absolute legends. We walked in knowing nothing about heavy Euros and within 10 minutes were playing Dune Imperium smoothly. Best lounge in Hyderabad!"
+              </p>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2 mt-auto">
+                <div style="width:40px;height:40px;border-radius:50%;background:var(--accent-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">
+                  AK
+                </div>
+                <div>
+                  <strong style="color:var(--text-primary);font-size:0.9rem;display:block;">Ananya K.</strong>
+                  <div style="font-size:0.75rem;color:var(--text-dim);">Google Verified Review</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div style="background:var(--bg-surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:28px;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;">
+              <div class="d-flex align-items-center justify-content-center gap-1 mb-3" style="color:var(--accent-copper);">
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+              </div>
+              <p style="font-size:0.9rem;font-style:italic;color:var(--text-parchment);margin-bottom:16px;text-align:center;">
+                "The miniature painting stations with professional sable brushes and wet palettes are unmatched. Sunday Paint & Sip is our weekly ritual."
+              </p>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2 mt-auto">
+                <div style="width:40px;height:40px;border-radius:50%;background:var(--accent-copper);color:#0d1b2a;display:flex;align-items:center;justify-content:center;font-weight:700;">
+                  RV
+                </div>
+                <div>
+                  <strong style="color:var(--text-primary);font-size:0.9rem;display:block;">Rohan Varma</strong>
+                  <div style="font-size:0.75rem;color:var(--text-dim);">Warhammer Painter</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <div style="background:var(--bg-surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:28px;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;">
+              <div class="d-flex align-items-center justify-content-center gap-1 mb-3" style="color:var(--accent-copper);">
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+                <i data-lucide="star" style="width:16px;height:16px;fill:var(--accent-copper);"></i>
+              </div>
+              <p style="font-size:0.9rem;font-style:italic;color:var(--text-parchment);margin-bottom:16px;text-align:center;">
+                "The food is surprisingly fantastic for a board game cafe. Truffle fries and the sourdough pizza are top tier. Private soundproof vault is 10/10."
+              </p>
+              <div class="d-flex flex-column align-items-center justify-content-center gap-2 mt-auto">
+                <div style="width:40px;height:40px;border-radius:50%;background:var(--accent-blue-light);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">
+                  SK
+                </div>
+                <div>
+                  <strong style="color:var(--text-primary);font-size:0.9rem;display:block;">Siddharth K.</strong>
+                  <div style="font-size:0.75rem;color:var(--text-dim);">Corporate Group Leader</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. SOCIAL CLUB & PHOTO GALLERY -->
+    <section id="gallery" class="py-5 my-5">
+      <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-eyebrow">TABLETOP VISUAL ARCHIVE</span>
+          <h2 class="section-title">Life at The Tabletop Club</h2>
+          <div class="copper-divider center"></div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="gallery-grid-frame">
+              <img src="image/pexels-cottonbro-6557747.jpg" alt="Clubhouse Dice Roll" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">TABLE 04 • CAMPAIGN</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-grid-frame">
+              <img src="image/strategic-board-game-stockcake.jpg" alt="Strategic Board Setup" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">HEAVY STRATEGY</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="gallery-grid-frame">
+              <img src="image/4_Heroes_Meet_at_teh_Tavern_Fantasy.jpg" alt="Tavern Fantasy RPG Session" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">D&D 5E DELVE</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="gallery-grid-frame">
+              <img src="image/diorama-world-war-ii_545448-28057.avif" alt="Scenic Wargaming Terrain" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">WARGAMING TERRAIN</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="gallery-grid-frame">
+              <img src="image/tabletop_rpg_miniatures_05_16_2025_c4f878e6-384a-4049-b17f-3210715c8859.webp" alt="Painted Miniatures Line" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">PAINTING STUDIO</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="gallery-grid-frame">
+              <img src="image/fantasy-board-game-adventure-colorful-miniatures-intricate-components-lively-setting-players-engage-immersive-365957456.webp" alt="Vibrant Fantasy Board Game" class="gallery-grid-img" loading="lazy">
+              <span class="gallery-overlay-badge">1200+ TITLES VAULT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. JUBILEE HILLS LOCATION, HOURS & TABLE RESERVATION -->
+    <section id="location" class="py-5" style="background:var(--bg-surface-1);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+      <div class="container py-4">
+        <div class="row g-5 align-items-stretch">
+          <!-- Location Details & Stylized Map -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="badge-editorial mb-2">HYDERABAD CLUBHOUSE</span>
+            <h2 class="section-title">Visit The Sanctuary</h2>
+            <div class="copper-divider"></div>
+            <p style="font-size:0.95rem;margin-bottom:20px;">
+              <strong>The Tabletop Club</strong><br>
+              44 Sovereign Vault Way, Road No. 36, Jubilee Hills, Hyderabad 500033
+            </p>
+
+            <div class="d-flex flex-column gap-2 mb-4" style="font-size:0.88rem;">
+              <div><strong style="color:var(--text-primary);">Tue – Thu:</strong> 12:00 PM – 10:30 PM</div>
+              <div><strong style="color:var(--accent-copper);">Fri – Sat:</strong> 12:00 PM – 12:00 AM (Midnight Sessions)</div>
+              <div><strong style="color:var(--text-primary);">Sunday:</strong> 11:00 AM – 10:00 PM</div>
+              <div><span style="color:#f87171;">Monday:</span> Closed for Studio Restocking</div>
+            </div>
+
+            <!-- Stylized Map Frame -->
+            <div style="background:#0c0d0f;border:1px solid var(--border-subtle);border-radius:var(--radius-md);height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.15;background-image:linear-gradient(to right, #ff9800 1px, transparent 1px), linear-gradient(to bottom, #ff9800 1px, transparent 1px);background-size:24px 24px;"></div>
+              <div style="position:relative;z-index:2;text-align:center;">
+                <div style="width:44px;height:44px;border-radius:50%;background:var(--accent-copper);color:#0d1b2a;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 0 25px var(--accent-copper-glow);margin-bottom:6px;">
+                  <i data-lucide="map-pin" style="width:22px;height:22px;"></i>
+                </div>
+                <div style="font-family:var(--font-display);font-weight:700;color:#fff;">THE TABLETOP CLUB</div>
+                <div style="font-size:0.75rem;color:var(--accent-copper);">Road 36, Jubilee Hills, Hyderabad</div>
+              </div>
+              <a href="https://maps.google.com" target="_blank" class="ctrl-btn" style="position:absolute;bottom:12px;right:12px;font-size:0.7rem;">
+                Open Maps <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Table Reservation Form -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div style="background:var(--bg-surface-2);border:1px solid var(--border-copper);border-radius:var(--radius-md);padding:36px;height:100%;">
+              <span class="badge-editorial mb-2">TABLE RESERVATIONS</span>
+              <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--text-primary);margin-bottom:12px;">
+                Reserve Your Gaming Table
+              </h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;">
+                Guarantee table placement, dedicated Game Master support, and pre-selected game library setup.
+              </p>
+
+              <form onsubmit="event.preventDefault();showToast('Table Booking Registered! Confirmation dispatched to your inbox.', 'success');this.reset();">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);">PARTY LEADER NAME</label>
+                    <input type="text" class="drawer-search-input" required placeholder="e.g. Commander Raymond">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);">EMAIL ADDRESS</label>
+                    <input type="email" class="drawer-search-input" required placeholder="name@domain.com">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);">VISIT DATE</label>
+                    <input type="date" class="drawer-search-input" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);">NUMBER OF PLAYERS</label>
+                    <select class="drawer-search-input">
+                      <option>2 Players (Dueling Alcove)</option>
+                      <option selected>3–4 Players (Standard Oak Table)</option>
+                      <option>5–8 Players (Large Campaign Mat)</option>
+                      <option>8+ Players (Private Soundproof Vault)</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);">SPECIFIC GAME WISH OR EVENT</label>
+                    <input type="text" class="drawer-search-input" placeholder="e.g. Dune Imperium, Warhammer 40K, or Painting Station">
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn-primary-club w-100">
+                      <i data-lucide="calendar-check" style="width:16px;height:16px;"></i> Confirm Parchment Table Booking
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TABLE RESERVATION MODAL (POPUP TRIGGER) -->
+  <div class="custom-modal-backdrop" id="reserveTableModal">
+    <div class="custom-modal-box">
+      <!-- Centered Clickable Brand Logo -->
+      <div class="auth-card-logo-wrap">
+        <a href="index.html" class="auth-card-logo" title="The Tabletop Club — Return to Sanctuary">
+          <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:20px;height:20px;"></i></div>
+          <div class="straight-brand-text text-start">
+            <span>THE TABLETOP CLUB</span>
+            <span class="straight-brand-sub">Jubilee Hills • Hyderabad</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-4 pb-2" style="border-bottom:1px solid var(--border-subtle);">
+        <div class="text-center w-100">
+          <span class="badge-editorial mb-1">TABLETOP CLUBHOUSE</span>
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--text-primary);margin:0;text-align:center;">Instant Table Reservation</h3>
+        </div>
+        <button class="drawer-close-btn" id="reserveModalClose" style="position:absolute;top:16px;right:16px;"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+      </div>
+
+      <form id="tableReserveForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">NAME</label>
+            <input type="text" class="drawer-search-input" required placeholder="Your Name">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">EMAIL</label>
+            <input type="email" class="drawer-search-input" required placeholder="email@address.com">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">DATE</label>
+            <input type="date" class="drawer-search-input" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">PLAYERS</label>
+            <select class="drawer-search-input">
+              <option>2 Players</option>
+              <option selected>3–4 Players</option>
+              <option>5–8 Players</option>
+            </select>
+          </div>
+          <div class="col-12 mt-4">
+            <button type="submit" class="btn-primary-club w-100">Confirm Booking</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="straight-brand mb-3">
+            <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:20px;height:20px;"></i></div>
+            <div class="straight-brand-text">
+              <span>THE TABLETOP CLUB</span>
+              <span class="straight-brand-sub">Jubilee Hills • Hyderabad</span>
+            </div>
+          </a>
+          <p class="footer-brand-bio">
+            India's ultimate board game lounge, miniature sanctuary, and gourmet social club. Preserving the tactile joy of analog gaming.
+          </p>
+          
+          <!-- Social Media Icons (Working Clickable Links) -->
+          <div class="footer-social-wrap">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="X / Twitter" aria-label="X / Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube">
+              <i data-lucide="youtube"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button class="ctrl-btn rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL"><i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i></button>
+            <button class="ctrl-btn theme-toggle-btn"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i> Theme</button>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Clubhouse</h4>
+          <ul class="footer-links-list">
+            <li><a href="#games" class="footer-link">Games Library</a></li>
+            <li><a href="#experience" class="footer-link">Experience</a></li>
+            <li><a href="#food" class="footer-link">Gourmet Menu</a></li>
+            <li><a href="#miniatures" class="footer-link">Painting Studio</a></li>
+            <li><a href="#events" class="footer-link">Game Nights</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Disciplines</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html" class="footer-link">Heavy Strategy Imports</a></li>
+            <li><a href="products.html" class="footer-link">28mm Scale Miniatures</a></li>
+            <li><a href="painting.html" class="footer-link">Kolinsky Sable Brushes</a></li>
+            <li><a href="events.html" class="footer-link">Warhammer Tournaments</a></li>
+            <li><a href="home-2.html" class="footer-link">Home 2 (Vault Edition)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Sanctuary Location</h4>
+          <p style="font-size:0.88rem;margin-bottom:8px;">
+            <i data-lucide="map-pin" style="width:14px;height:14px;color:var(--accent-copper);margin-right:6px;"></i>
+            44 Sovereign Vault Way, Jubilee Hills, Hyderabad
+          </p>
+          <p style="font-size:0.88rem;margin-bottom:8px;">
+            <i data-lucide="phone" style="width:14px;height:14px;color:var(--accent-copper);margin-right:6px;"></i>
+            +91 (040) 2894-TABLE
+          </p>
+          <p style="font-size:0.88rem;">
+            <i data-lucide="mail" style="width:14px;height:14px;color:var(--accent-copper);margin-right:6px;"></i>
+            guild@thetabletopclub.in
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 The Tabletop Club. All rights reserved. Crafted for collectors and tacticians.</div>
+        <div class="d-flex gap-4">
+          <a href="#houseRules" class="footer-link">House Rules</a>
+          <a href="#privacyPolicy" class="footer-link">Privacy Policy</a>
+          <a href="#clubhouseTerms" class="footer-link">Clubhouse Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/painting.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 40 });
+  </script>
+</body>
+</html>

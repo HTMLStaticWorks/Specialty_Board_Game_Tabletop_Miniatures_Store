@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Discovery & Miniature Vault | The Tabletop Club</title>
+  <meta name="description" content="Explore our curated collection of specialty board games, 28mm resin miniatures, dark fantasy RPGs, and card duel games. Interactive filters by players, duration, and complexity.">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- CSS Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- STRAIGHT FLOATING NAVBAR -->
+  <div class="straight-navbar-wrapper">
+    <header class="straight-navbar" id="straightNav">
+      <a href="index.html" class="straight-brand">
+        <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:20px;height:20px;"></i></div>
+        <div class="straight-brand-text">
+          <span>THE TABLETOP CLUB</span>
+          <span class="straight-brand-sub">Jubilee Hills • Hyderabad</span>
+        </div>
+      </a>
+
+      <ul class="straight-nav-links">
+        <li><a href="index.html" class="straight-nav-item"><i data-lucide="home"></i><span>Home</span></a></li>
+        <li><a href="home-2.html" class="straight-nav-item"><i data-lucide="crown"></i><span>Home 2</span></a></li>
+        <li><a href="products.html" class="straight-nav-item active"><i data-lucide="dices"></i><span>Games</span></a></li>
+        <li><a href="events.html" class="straight-nav-item"><i data-lucide="calendar"></i><span>Events</span></a></li>
+        <li><a href="painting.html" class="straight-nav-item"><i data-lucide="brush"></i><span>Studio</span></a></li>
+        <li><a href="contact.html" class="straight-nav-item"><i data-lucide="map-pin"></i><span>Contact</span></a></li>
+      </ul>
+
+      <div class="straight-controls">
+        <button class="ctrl-btn rtl-toggle-btn" title="Toggle RTL / LTR" aria-label="Toggle RTL"><i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i></button>
+        <button class="ctrl-btn theme-toggle-btn" title="Toggle Theme"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i><span>Theme</span></button>
+        <a href="contact.html" class="ctrl-btn ctrl-btn-reserve reserve-table-trigger"><i data-lucide="calendar-check" style="width:14px;height:14px;"></i><span>Book Table</span></a>
+      </div>
+
+      <button class="straight-hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <a href="index.html" class="straight-brand">
+        <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:18px;height:18px;"></i></div>
+        <div class="straight-brand-text"><span>THE TABLETOP CLUB</span><span class="straight-brand-sub">Vault Portal</span></div>
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    </div>
+    <div class="drawer-search-box">
+      <input type="text" class="drawer-search-input" placeholder="Search games, minis, paints..." id="drawerSearchInput">
+      <i data-lucide="search" class="drawer-search-icon" style="width:18px;height:18px;"></i>
+    </div>
+    <ul class="drawer-nav-list">
+      <li><a href="index.html" class="drawer-nav-link"><span>01. Home</span><span class="number">CLUB</span></a></li>
+      <li><a href="home-2.html" class="drawer-nav-link"><span>01B. Home 2 (Vault)</span><span class="number">3D TURNTABLE</span></a></li>
+      <li><a href="products.html" class="drawer-nav-link active"><span>02. Games & Miniatures</span><span class="number">1200+</span></a></li>
+      <li><a href="events.html" class="drawer-nav-link"><span>03. Game Nights</span><span class="number">EVENTS</span></a></li>
+      <li><a href="painting.html" class="drawer-nav-link"><span>04. Painting Studio</span><span class="number">PAINTS</span></a></li>
+      <li><a href="contact.html" class="drawer-nav-link"><span>05. Clubhouse & Contact</span><span class="number">VISIT</span></a></li>
+    </ul>
+    <div class="d-flex gap-2 mb-3">
+      <button class="ctrl-btn rtl-toggle-btn flex-grow-1" title="Toggle RTL / LTR" aria-label="Toggle RTL"><i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i></button>
+      <button class="ctrl-btn theme-toggle-btn flex-grow-1"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i><span>Theme</span></button>
+    </div>
+    <a href="contact.html" class="btn-primary-club w-100 reserve-table-trigger mb-3">
+      <i data-lucide="calendar-check" style="width:16px;height:16px;"></i> Book A Table In Sanctuary
+    </a>
+  </aside>
+
+  <!-- Cart Slideover Drawer -->
+  <aside class="cart-drawer-slideover" id="cartSlideover">
+    <div class="drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i data-lucide="shopping-bag" style="color:var(--accent-copper);width:22px;height:22px;"></i>
+        <h3 style="font-size:1.15rem;margin:0;font-family:var(--font-display);">Collection Satchel</h3>
+      </div>
+      <button class="drawer-close-btn" id="cartCloseBtn"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList"></div>
+    <div style="border-top:1px solid var(--border-subtle);padding-top:20px;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span style="color:var(--text-muted);font-size:0.9rem;">Estimated Total:</span>
+        <strong id="cartSubtotal" style="font-family:var(--font-display);font-size:1.3rem;color:var(--accent-copper);">$0.00</strong>
+      </div>
+      <button class="btn-primary-club w-100" onclick="showToast('Proceeding to checkout...', 'success')">Secure Checkout</button>
+    </div>
+  </aside>
+
+  <!-- PAGE HEADER HERO -->
+  <main style="padding-top:120px;">
+    <section class="py-5" style="background:var(--bg-obsidian);border-bottom:1px solid var(--border-subtle);">
+      <div class="container text-center">
+        <span class="section-eyebrow" data-aos="fade-down">THE VAULT ARCHIVE</span>
+        <h1 class="section-title" data-aos="fade-up">Game Discovery & Tabletop Artifacts</h1>
+        <div class="copper-divider center"></div>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Filter by party size, play session length, and strategic depth. Every title is curated for tactile excellence and replayability.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE GAME DISCOVERY FILTERS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="filters-container" data-aos="fade-up" style="background:var(--bg-surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:24px;margin-bottom:40px;">
+          <div class="row g-4 align-items-center mb-4">
+            <div class="col-md-7">
+              <div style="position:relative;">
+                <input type="text" id="productSearchInput" class="drawer-search-input" placeholder="Search by game title, setting, or mechanics...">
+                <i data-lucide="search" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--text-dim);pointer-events:none;"></i>
+              </div>
+            </div>
+            <div class="col-md-5 d-flex justify-content-between justify-content-md-end align-items-center flex-wrap gap-2">
+              <span id="productsCount" style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;color:var(--accent-copper);">12 TITLES DISCOVERED</span>
+              <select id="productSortSelect" class="drawer-search-input" style="width:auto;min-width:180px;">
+                <option value="featured">Featured Curations</option>
+                <option value="difficulty">Complexity (High → Low)</option>
+                <option value="price-asc">Price (Low → High)</option>
+                <option value="price-desc">Price (High → Low)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Filter Group 1: Category -->
+          <div class="mb-3">
+            <span class="filter-group-title" style="font-size:0.75rem;font-weight:700;color:var(--accent-copper);letter-spacing:0.15em;text-transform:uppercase;display:block;margin-bottom:10px;">Tabletop Disciplines</span>
+            <div class="filter-chips-wrap d-flex flex-wrap gap-2">
+              <button class="filter-chip active" data-filter-type="category" data-filter-val="all">All Categories</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="board games">Board Games</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="miniatures">Miniatures</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="card">Card Games</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="rpg">RPG & Grimoires</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="strategy">Strategy</button>
+              <button class="filter-chip" data-filter-type="category" data-filter-val="family">Family</button>
+            </div>
+          </div>
+
+          <!-- Filter Group 2: Player Count & Duration -->
+          <div class="row g-4 pt-3" style="border-top:1px solid var(--border-subtle);">
+            <div class="col-md-6">
+              <span class="filter-group-title" style="font-size:0.75rem;font-weight:700;color:var(--accent-copper);letter-spacing:0.15em;text-transform:uppercase;display:block;margin-bottom:10px;">Player Count</span>
+              <div class="filter-chips-wrap d-flex flex-wrap gap-2">
+                <button class="filter-chip active" data-filter-type="players" data-filter-val="all">Any Count</button>
+                <button class="filter-chip" data-filter-type="players" data-filter-val="2">2 Players (Duel)</button>
+                <button class="filter-chip" data-filter-type="players" data-filter-val="3-4">3–4 Players</button>
+                <button class="filter-chip" data-filter-type="players" data-filter-val="5plus">5+ Players (Group)</button>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <span class="filter-group-title" style="font-size:0.75rem;font-weight:700;color:var(--accent-copper);letter-spacing:0.15em;text-transform:uppercase;display:block;margin-bottom:10px;">Session Duration</span>
+              <div class="filter-chips-wrap d-flex flex-wrap gap-2">
+                <button class="filter-chip active" data-filter-type="duration" data-filter-val="all">Any Duration</button>
+                <button class="filter-chip" data-filter-type="duration" data-filter-val="under30">&lt; 30 Min</button>
+                <button class="filter-chip" data-filter-type="duration" data-filter-val="30-60">30–60 Min</button>
+                <button class="filter-chip" data-filter-type="duration" data-filter-val="60plus">60+ Min (Deep Dive)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCTS DYNAMIC GRID -->
+        <div class="row g-4" id="productsGrid">
+          <!-- Rendered dynamically by js/products.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="custom-modal-backdrop" id="quickViewModal">
+    <div class="custom-modal-box">
+      <button class="drawer-close-btn" id="quickViewClose" style="position:absolute;top:16px;right:16px;z-index:10;">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- TABLE RESERVATION MODAL -->
+  <div class="custom-modal-backdrop" id="reserveTableModal">
+    <div class="custom-modal-box">
+      <!-- Centered Clickable Brand Logo inside Modal Card -->
+      <div class="auth-card-logo-wrap">
+        <a href="index.html" class="auth-card-logo" title="The Tabletop Club - Return to Home">
+          <div class="auth-card-logo-icon">
+            <i data-lucide="shield-alert" style="width:24px;height:24px;"></i>
+          </div>
+          <div class="auth-card-logo-text">
+            <span>THE TABLETOP CLUB</span>
+            <span class="auth-card-logo-sub">Jubilee Hills • Hyderabad</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-4 pb-2" style="border-bottom:1px solid var(--border-subtle);">
+        <div>
+          <span class="badge-editorial mb-1">TABLETOP CLUBHOUSE</span>
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--text-primary);margin:0;">Reserve A Table</h3>
+        </div>
+        <button class="drawer-close-btn" id="reserveModalClose"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+      </div>
+
+      <form id="tableReserveForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">YOUR NAME</label>
+            <input type="text" class="drawer-search-input" required placeholder="Lord Commander">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">EMAIL</label>
+            <input type="email" class="drawer-search-input" required placeholder="commander@tabletop.club">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">VISIT DATE</label>
+            <input type="date" class="drawer-search-input" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);">PLAYERS</label>
+            <select class="drawer-search-input">
+              <option>2 Players (Dueling Alcove)</option>
+              <option selected>3–4 Players (Standard Oak Table)</option>
+              <option>5–8 Players (Grand Wargaming Mat)</option>
+            </select>
+          </div>
+          <div class="col-12 mt-4">
+            <button type="submit" class="btn-primary-club w-100">
+              <i data-lucide="calendar-check" style="width:16px;height:16px;"></i> Confirm Booking
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="straight-brand mb-3">
+            <div class="straight-logo-icon"><i data-lucide="shield-alert" style="width:20px;height:20px;"></i></div>
+            <div class="straight-brand-text">
+              <span>THE TABLETOP CLUB</span>
+              <span class="straight-brand-sub">Jubilee Hills • Hyderabad</span>
+            </div>
+          </a>
+          <p class="footer-brand-bio">
+            An artisanal sanctuary for board game tacticians, miniature painters, and tabletop hobbyists.
+          </p>
+          
+          <!-- Equal Sized Working Footer Social Links -->
+          <div class="footer-social-wrap">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="X / Twitter" aria-label="X (Twitter)">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="YouTube" aria-label="YouTube">
+              <i data-lucide="youtube"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button class="ctrl-btn rtl-toggle-btn" title="Toggle RTL / LTR" aria-label="Toggle RTL"><i data-lucide="arrow-left-right" style="width:16px;height:16px;"></i></button>
+            <button class="ctrl-btn theme-toggle-btn"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i> Theme</button>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="home-2.html" class="footer-link">Home 2 (Vault)</a></li>
+            <li><a href="products.html" class="footer-link">Games & Minis</a></li>
+            <li><a href="events.html" class="footer-link">Game Nights</a></li>
+            <li><a href="painting.html" class="footer-link">Studio</a></li>
+            <li><a href="contact.html" class="footer-link">Clubhouse</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Specialty</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html" class="footer-link">Staff Recommendations</a></li>
+            <li><a href="products.html" class="footer-link">Heavy Strategy Imports</a></li>
+            <li><a href="products.html" class="footer-link">28mm Collector Miniatures</a></li>
+            <li><a href="painting.html" class="footer-link">Starter Painting Kits</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Location</h4>
+          <p style="font-size:0.88rem;color:var(--text-muted);">
+            44 Sovereign Vault Way, Jubilee Hills, Hyderabad<br>
+            Tue–Sun: 12:00 PM – 11:30 PM
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 The Tabletop Club. All rights reserved. Crafted for collectors and tacticians.</div>
+        <div class="d-flex gap-4">
+          <a href="index.html#houseRules" class="footer-link">House Rules</a>
+          <a href="index.html#privacyPolicy" class="footer-link">Privacy Policy</a>
+          <a href="index.html#clubhouseTerms" class="footer-link">Clubhouse Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 40 });
+  </script>
+</body>
+</html>
