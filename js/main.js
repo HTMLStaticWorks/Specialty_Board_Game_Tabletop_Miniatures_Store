@@ -294,4 +294,80 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // Active Navigation Highlighting (ScrollSpy for Hash links & Page Route matching)
+  const navLinks = document.querySelectorAll('.straight-nav-links .straight-nav-item, .drawer-nav-list .drawer-nav-link');
+  const hashSections = [];
+
+  // Gather section targets on the current page
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#') && href.length > 1) {
+      const targetId = href.substring(1);
+      const el = document.getElementById(targetId);
+      if (el && !hashSections.some(s => s.id === targetId)) {
+        hashSections.push({ id: targetId, el, linkHref: href });
+      }
+    }
+  });
+
+  // Sort sections by their vertical DOM offset to ensure accurate scroll tracking
+  hashSections.sort((a, b) => a.el.offsetTop - b.el.offsetTop);
+
+  function updateActiveNavOnScroll() {
+    if (hashSections.length === 0) return;
+
+    const scrollPos = window.scrollY + 140; // offset for fixed straight navbar
+    let currentActiveId = null;
+
+    for (let i = 0; i < hashSections.length; i++) {
+      const sec = hashSections[i];
+      const top = sec.el.offsetTop;
+      const height = sec.el.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentActiveId = sec.id;
+        break;
+      }
+    }
+
+    // If reached bottom of page, activate last section (e.g. #location)
+    if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 80) && hashSections.length > 0) {
+      currentActiveId = hashSections[hashSections.length - 1].id;
+    }
+
+    // If scroll is near the top of the page, activate first section
+    if (window.scrollY < 200 && hashSections.length > 0 && !currentActiveId) {
+      currentActiveId = hashSections[0].id;
+    }
+
+    if (currentActiveId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentActiveId}` || href?.endsWith(`#${currentActiveId}`)) {
+          link.classList.add('active');
+        } else if (href && href.startsWith('#')) {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  if (hashSections.length > 0) {
+    window.addEventListener('scroll', updateActiveNavOnScroll, { passive: true });
+    updateActiveNavOnScroll();
+  }
+
+  // Also highlight current page path for multi-page nav links
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('#')) {
+      const linkPath = href.split('#')[0].split('/').pop();
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      } else if (linkPath && currentPath !== 'index.html' && linkPath !== '') {
+        link.classList.remove('active');
+      }
+    }
+  });
 });
