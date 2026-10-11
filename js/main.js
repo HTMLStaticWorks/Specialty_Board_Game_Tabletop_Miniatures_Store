@@ -258,24 +258,220 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('Table Reserved! Your clubhouse parchment ticket has been confirmed.', 'success');
   });
 
-  // Home Games Category Switcher
+  // Home Games Category Switcher & Dynamic Banner Navigation
+  const categoryMeta = {
+    all: {
+      badge: 'ALL DISCIPLINES',
+      text: 'Explore 1200+ curated board games & tabletop miniatures in Hyderabad',
+      btnText: 'Explore Full Store Catalog',
+      link: 'products.html'
+    },
+    strategy: {
+      badge: 'STRATEGY GAMES',
+      text: '380+ Strategic Euro, Worker Placement & 4X Titles in Stock',
+      btnText: 'Shop All Strategy Titles',
+      link: 'products.html?category=strategy'
+    },
+    party: {
+      badge: 'PARTY & BLUFFING',
+      text: '240+ Social Deduction, Trivia & Large Group Titles in Stock',
+      btnText: 'Shop All Party Games',
+      link: 'products.html?category=party'
+    },
+    family: {
+      badge: 'FAMILY CLASSICS',
+      text: '210+ Welcoming Gateway & Engine Building Games in Stock',
+      btnText: 'Shop Family Games',
+      link: 'products.html?category=family'
+    },
+    card: {
+      badge: 'TACTICAL CARD DUELS',
+      text: '120+ 2-Player Combat, Drafting & LCG Decks in Stock',
+      btnText: 'Shop Card Games',
+      link: 'products.html?category=card'
+    },
+    rpg: {
+      badge: 'ADVENTURE & RPGS',
+      text: '190+ Dungeon Crawlers, D&D & Legacy Campaigns in Stock',
+      btnText: 'Shop Adventure RPGs',
+      link: 'products.html?category=rpg'
+    },
+    miniatures: {
+      badge: 'TABLETOP MINIATURES',
+      text: '150+ 28mm Resin Regiments, Wargame Armies & Paint Kits',
+      btnText: 'Jump to Miniature Sanctuary ↓',
+      link: '#miniatures'
+    }
+  };
+
   const homeCategoryBtns = document.querySelectorAll('.home-cat-tab-btn');
   const homeGameCards = document.querySelectorAll('.home-game-card-col');
+  const catBadge = document.getElementById('currentCategoryBadge');
+  const catText = document.getElementById('currentCategoryText');
+  const catLink = document.getElementById('exploreCategoryLink');
+  const catLinkText = document.getElementById('exploreCategoryText');
+
+  function applyCategoryFilter(category) {
+    homeCategoryBtns.forEach(b => {
+      if (b.dataset.category === category) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    // Update banner
+    const meta = categoryMeta[category] || categoryMeta.all;
+    if (catBadge) catBadge.textContent = meta.badge;
+    if (catText) catText.textContent = meta.text;
+    if (catLink) catLink.setAttribute('href', meta.link);
+    if (catLinkText) catLinkText.textContent = meta.btnText;
+
+    // Filter cards with smooth fade
+    homeGameCards.forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
 
   homeCategoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      homeCategoryBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const category = btn.dataset.category;
-
-      homeGameCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      const category = btn.dataset.category || 'all';
+      applyCategoryFilter(category);
     });
+  });
+
+  window.filterCategoryBySlug = function(slug) {
+    applyCategoryFilter(slug);
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) {
+      gamesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Product Quick View System
+  const quickViewModal = document.getElementById('quickViewModal');
+  const quickViewCloseBtn = document.getElementById('quickViewCloseBtn');
+
+  const productsDatabase = {
+    'prod-1': {
+      title: 'Aethelred: High Realm',
+      category: 'STRATEGY • EURO',
+      stock: 'IN STOCK (12 LEFT)',
+      price: 84.00,
+      image: 'image/boardgame_dune.jpg',
+      rating: '★★★★★ (4.9 Rating • 142 Reviews)',
+      desc: 'Immerse your tabletop group in high-stakes tactical warfare and territory governance. Features 120 custom wooden faction meeples, screen-printed resource cubes, dual-layer player boards, and a linen-finish campaign board map.',
+      players: '3–4 Players',
+      time: '90–120 Min',
+      complexity: '3.8 / 5.0 (Medium-Heavy)',
+      age: '14+ Years'
+    },
+    'prod-2': {
+      title: 'Abyssal Descent: Catacombs',
+      category: 'ADVENTURE • RPG',
+      stock: 'HOT RELEASE',
+      price: 135.00,
+      image: 'image/boardgame_frosthaven.jpg',
+      rating: '★★★★★ (5.0 Rating • 98 Reviews)',
+      desc: 'Massive cooperative dungeon delve campaign. Includes 64 high-detail miniatures, 138 branching scenario maps, modular fog-of-war floor hexes, and character class progression envelopes for hundreds of hours of tactical exploration.',
+      players: '1–4 Players',
+      time: '120–180 Min',
+      complexity: '4.2 / 5.0 (Heavy)',
+      age: '14+ Years'
+    },
+    'prod-3': {
+      title: 'The Obsidian Knight (28mm)',
+      category: 'TABLETOP MINIATURE',
+      stock: 'STUDIO EDITION',
+      price: 42.00,
+      image: 'image/hero_miniature.jpg',
+      rating: '★★★★★ (4.9 Rating • 64 Reviews)',
+      desc: 'Master resin sculpt engineered for competitive tabletop wargames and display painters. Pre-cleaned high-density grey resin with scenic fortress cobblestone base, optional heraldic shield, and alternate weapon hands.',
+      players: 'Single Miniature',
+      time: 'Assembly Required',
+      complexity: 'Level 3 Detailing',
+      age: '12+ Years'
+    },
+    'prod-party-1': {
+      title: 'Tavern Brawl: Chaos Night',
+      category: 'PARTY • BLUFFING',
+      stock: 'BESTSELLER',
+      price: 29.00,
+      image: 'image/tabletop-gaming-fun-stockcake.jpg',
+      rating: '★★★★★ (4.8 Rating • 210 Reviews)',
+      desc: 'Fast, hilarious social deduction and dice-chucking party brawl. Players secretly ally, betray, and bribe one another to escape the tavern with the tavern keepers legendary treasure chest. Playable in 20 minutes.',
+      players: '4–10 Players',
+      time: '20–30 Min',
+      complexity: '1.4 / 5.0 (Light & Casual)',
+      age: '10+ Years'
+    }
+  };
+
+  window.openQuickView = function(productId) {
+    const item = productsDatabase[productId];
+    if (!item || !quickViewModal) return;
+
+    const titleEl = document.getElementById('qvTitle');
+    const catEl = document.getElementById('qvCategory');
+    const stockEl = document.getElementById('qvStock');
+    const priceEl = document.getElementById('qvPrice');
+    const imgEl = document.getElementById('qvImage');
+    const ratingEl = document.getElementById('qvRating');
+    const descEl = document.getElementById('qvDescription');
+    const playersEl = document.getElementById('qvPlayers');
+    const timeEl = document.getElementById('qvTime');
+    const compEl = document.getElementById('qvComplexity');
+    const ageEl = document.getElementById('qvAge');
+
+    if (titleEl) titleEl.textContent = item.title;
+    if (catEl) catEl.textContent = item.category;
+    if (stockEl) stockEl.textContent = item.stock;
+    if (priceEl) priceEl.textContent = `$${item.price.toFixed(2)}`;
+    if (imgEl) imgEl.src = item.image;
+    if (ratingEl) ratingEl.textContent = item.rating;
+    if (descEl) descEl.textContent = item.desc;
+    if (playersEl) playersEl.textContent = item.players;
+    if (timeEl) timeEl.textContent = item.time;
+    if (compEl) compEl.textContent = item.complexity;
+    if (ageEl) ageEl.textContent = item.age;
+
+    const addBtn = document.getElementById('qvAddBtn');
+    if (addBtn) {
+      addBtn.onclick = () => {
+        CartManager.addItem({ id: productId, name: item.title, price: item.price, image: item.image });
+        quickViewModal.classList.remove('show');
+        document.body.style.overflow = '';
+      };
+    }
+
+    quickViewModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+  };
+
+  quickViewCloseBtn?.addEventListener('click', () => {
+    quickViewModal?.classList.remove('show');
+    document.body.style.overflow = '';
+  });
+
+  quickViewModal?.addEventListener('click', (e) => {
+    if (e.target === quickViewModal) {
+      quickViewModal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && quickViewModal?.classList.contains('show')) {
+      quickViewModal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
   });
 
   // Ensure Background Videos Autoplay Smoothly and Stay Visible
