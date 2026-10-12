@@ -449,16 +449,17 @@ img, video {
    ========================================================================== */
 .straight-navbar-wrapper {
   position: fixed;
-  top: 16px;
+  top: 14px;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 clamp(12px, 2.5vw, 24px);
+  padding: 0 clamp(8px, 2vw, 20px);
   pointer-events: none;
 }
 
 .straight-navbar {
-  max-width: var(--container-max);
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   height: 64px;
   background: var(--bg-glass);
@@ -470,13 +471,16 @@ img, video {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  gap: 12px;
+  padding: 0 18px;
   pointer-events: auto;
   transition: var(--transition-smooth);
+  position: relative;
+  box-sizing: border-box;
 }
 
 .straight-navbar.scrolled {
-  top: 8px;
+  top: 6px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
   border-color: var(--border-copper);
 }
@@ -485,10 +489,11 @@ img, video {
 .straight-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
   transition: transform 0.25s ease;
+  z-index: 2;
 }
 
 .straight-brand:hover {
@@ -496,8 +501,8 @@ img, video {
 }
 
 .straight-logo-icon {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: radial-gradient(circle at 30% 30%, #1a365d 0%, #081325 100%);
   border: 1.5px solid var(--accent-copper);
@@ -505,27 +510,28 @@ img, video {
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 0 16px var(--accent-copper-glow);
+  box-shadow: 0 0 14px var(--accent-copper-glow);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
 .straight-brand:hover .straight-logo-icon {
   border-color: #f6c874;
-  box-shadow: 0 0 24px rgba(229, 169, 59, 0.5);
+  box-shadow: 0 0 20px rgba(229, 169, 59, 0.5);
   transform: rotate(3deg) scale(1.05);
 }
 
 .straight-brand-text {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   display: flex;
   flex-direction: column;
   line-height: 1.15;
   text-align: left;
+  white-space: nowrap;
 }
 
 .straight-brand-text .brand-title {
@@ -535,23 +541,26 @@ img, video {
 
 .straight-brand-sub {
   font-family: var(--font-body);
-  font-size: 0.58rem;
+  font-size: 0.56rem;
   color: var(--accent-copper);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 2px;
 }
 
-/* Straight Nav Items (Clean Text-Only Navigation, No Icons) */
+/* Straight Nav Items (Clean Text Navigation) */
 .straight-nav-links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 2px;
   list-style: none;
-  margin: 0 auto;
-  padding: 0 8px;
+  margin: 0;
+  padding: 0 4px;
   white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .straight-nav-item {
@@ -559,15 +568,16 @@ img, video {
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 8px 11px;
+  padding: 6px 9px;
   border-radius: var(--radius-sm);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .straight-nav-item:hover {
@@ -584,21 +594,22 @@ img, video {
   content: '';
   position: absolute;
   bottom: 2px;
-  left: 10px;
-  right: 10px;
+  left: 8px;
+  right: 8px;
   height: 2px;
   background: var(--accent-copper);
   border-radius: 2px;
   box-shadow: 0 0 8px var(--accent-copper-glow);
 }
 
-/* Control Buttons */
+/* Control Buttons & Header Icon Buttons */
 .straight-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .ctrl-btn {
@@ -606,50 +617,100 @@ img, video {
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   height: 38px;
-  padding: 0 13px;
+  padding: 0 12px;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   cursor: pointer;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   transition: var(--transition-smooth);
   text-decoration: none;
-}
-
-.ctrl-btn.cart-toggle-trigger {
-  position: relative;
-}
-
-.ctrl-btn.cart-toggle-trigger .cart-badge-count {
-  background: var(--accent-crimson);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .ctrl-btn:hover {
   border-color: var(--accent-copper);
   color: var(--accent-copper);
   background: var(--bg-card-hover);
+  transform: translateY(-1px);
 }
 
+/* Dedicated Icon-Only Buttons (Cart, Theme, RTL) */
+.ctrl-btn.ctrl-btn-icon {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ctrl-btn.ctrl-btn-icon i,
+.ctrl-btn.ctrl-btn-icon svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-parchment);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.ctrl-btn.ctrl-btn-icon:hover i,
+.ctrl-btn.ctrl-btn-icon:hover svg {
+  color: var(--accent-copper);
+  transform: scale(1.1);
+}
+
+/* Cart Satchel Badge */
+.ctrl-btn.cart-toggle-trigger {
+  position: relative;
+}
+
+.ctrl-btn.cart-toggle-trigger .cart-badge-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--accent-crimson);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1.5px solid var(--bg-surface-1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Edition II / Vault Switcher Button */
+.ctrl-btn-vault {
+  border-color: var(--border-copper);
+  color: var(--accent-copper-light);
+  padding: 0 11px;
+}
+
+.ctrl-btn-vault:hover {
+  border-color: #f6c874;
+  color: #f6c874;
+  box-shadow: 0 0 12px var(--accent-copper-glow);
+}
+
+/* Reserve Table CTA */
 .ctrl-btn-reserve {
   background: linear-gradient(135deg, var(--accent-blue), #0d47a1);
   border: 1px solid var(--accent-copper);
   color: #fff !important;
-  padding: 0 16px;
-  box-shadow: 0 0 15px var(--accent-blue-glow);
+  padding: 0 14px;
+  box-shadow: 0 0 14px var(--accent-blue-glow);
 }
 
 .ctrl-btn-reserve:hover {
@@ -658,17 +719,66 @@ img, video {
   box-shadow: 0 0 20px var(--accent-copper-glow);
 }
 
-/* Desktop Navigation Links & Controls */
+/* Screens 1201px to 1380px: Fine-tune for perfect fit */
+@media (min-width: 1201px) and (max-width: 1380px) {
+  .straight-nav-links {
+    gap: 2px;
+  }
+  .straight-nav-item {
+    font-size: 0.70rem;
+    padding: 6px 7px;
+  }
+  .straight-brand-sub {
+    font-size: 0.52rem;
+  }
+}
+
+/* Screens 993px to 1200px: Compact desktop navigation */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .straight-navbar {
+    padding: 0 12px !important;
+    gap: 8px !important;
+    height: 62px !important;
+  }
+  .straight-brand-sub {
+    display: none !important;
+  }
+  .straight-brand-text .brand-title {
+    font-size: 0.92rem !important;
+  }
+  .straight-nav-links {
+    gap: 1px !important;
+    padding: 0 2px !important;
+  }
+  .straight-nav-item {
+    font-size: 0.65rem !important;
+    padding: 5px 6px !important;
+    letter-spacing: 0.02em !important;
+  }
+  .ctrl-btn {
+    height: 35px !important;
+    font-size: 0.68rem !important;
+  }
+  .ctrl-btn.ctrl-btn-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .ctrl-btn-vault span.ctrl-label,
+  .ctrl-btn-reserve span.ctrl-label {
+    display: none !important;
+  }
+  .ctrl-btn-vault,
+  .ctrl-btn-reserve {
+    padding: 0 9px !important;
+  }
+}
+
+/* Desktop general rules */
 @media (min-width: 993px) {
   .straight-navbar {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-    max-width: 1360px !important;
-    height: 66px !important;
-    padding: 0 20px !important;
   }
   .straight-nav-links {
     display: flex !important;
@@ -682,91 +792,82 @@ img, video {
   }
 }
 
-/* 1024px Specific Fine-Tuning (Fix Alignment Issue at 1024px) */
-@media (min-width: 993px) and (max-width: 1120px) {
-  .straight-navbar {
-    padding: 0 12px !important;
-    height: 62px !important;
-    gap: 6px !important;
-  }
-  .straight-brand-text .brand-title {
-    font-size: 0.95rem !important;
-  }
-  .straight-brand-sub {
-    font-size: 0.52rem !important;
-  }
-  .straight-nav-links {
-    gap: 2px !important;
-    padding: 0 4px !important;
-  }
-  .straight-nav-item {
-    font-size: 0.68rem !important;
-    padding: 6px 7px !important;
-    letter-spacing: 0.04em !important;
-  }
-  .ctrl-btn {
-    height: 34px !important;
-    padding: 0 9px !important;
-    font-size: 0.68rem !important;
-    gap: 4px !important;
-  }
-}
-
 /* Mobile & Tablet Drawer Trigger (Screens <= 992px) */
 @media (max-width: 992px) {
-  .straight-nav-links,
-  .straight-navbar .straight-nav-links,
-  .straight-navbar > *:not(.straight-brand):not(.straight-hamburger):not(.straight-controls-mobile) {
+  .straight-nav-links {
     display: none !important;
     visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
   }
 
   .straight-navbar {
     height: 58px !important;
-    padding: 0 16px !important;
+    padding: 0 14px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    gap: 8px !important;
   }
 
   .straight-brand {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
     margin-right: auto !important;
     flex-shrink: 0 !important;
+  }
+
+  .straight-brand-sub {
+    display: none !important;
+  }
+
+  .straight-brand-text .brand-title {
+    font-size: 0.88rem !important;
+  }
+
+  .straight-logo-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .straight-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Show icon buttons in mobile header; hide text buttons */
+  .straight-controls .ctrl-btn:not(.ctrl-btn-icon) {
+    display: none !important;
+  }
+
+  .straight-controls .ctrl-btn.ctrl-btn-icon {
+    width: 36px !important;
+    height: 36px !important;
   }
 
   .straight-hamburger {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-left: auto !important;
-    width: 42px !important;
-    height: 42px !important;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: var(--radius-sm) !important;
     background: var(--bg-surface-2) !important;
     border: 1px solid var(--border-copper) !important;
     color: var(--text-primary) !important;
     cursor: pointer !important;
     flex-direction: column !important;
-    gap: 5px !important;
-    padding: 8px !important;
+    gap: 4px !important;
+    padding: 7px !important;
     flex-shrink: 0 !important;
     transition: var(--transition-smooth) !important;
   }
 
   .straight-hamburger span {
     display: block !important;
-    width: 22px !important;
-    height: 2.5px !important;
+    width: 20px !important;
+    height: 2px !important;
     background-color: var(--text-primary) !important;
     border-radius: 2px !important;
     transition: var(--transition-smooth) !important;
@@ -789,6 +890,31 @@ img, video {
 
   .straight-hamburger:hover span {
     background-color: #0d1b2a !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .straight-navbar {
+    padding: 0 10px !important;
+  }
+  .straight-controls {
+    gap: 4px !important;
+  }
+  .straight-controls .ctrl-btn.ctrl-btn-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .straight-controls .ctrl-btn.ctrl-btn-icon i,
+  .straight-controls .ctrl-btn.ctrl-btn-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .straight-hamburger {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .straight-brand-text .brand-title {
+    font-size: 0.8rem !important;
   }
 }
 
@@ -2317,9 +2443,19 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover {
   flex-direction: row-reverse;
 }
 
+[dir="rtl"] .straight-brand {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+  text-align: right;
+}
+
+[dir="rtl"] .straight-brand-text {
+  text-align: right;
+}
+
 [dir="rtl"] .straight-hamburger {
   margin-left: 0;
-  margin-right: auto;
+  margin-right: 0;
 }
 
 [dir="rtl"] .hero-lead-text,

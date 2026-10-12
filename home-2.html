@@ -61,30 +61,33 @@
         <li><a href="#location" class="straight-nav-item">Sanctuary</a></li>
       </ul>
 
-      <!-- Action Controls (Home 1 Link, Cart Satchel, Theme Toggle, Book Table) -->
+      <!-- Action Controls (Home 1 Link, RTL Switcher, Theme Switcher, Cart Satchel, Table Booking) -->
       <div class="straight-controls">
-        <a href="index.html" class="ctrl-btn" title="Return to Home 1: Flagship Store">
+        <a href="index.html" class="ctrl-btn ctrl-btn-vault" title="Return to Flagship Store (Home 1)">
           <i data-lucide="store" style="width:14px;height:14px;color:var(--accent-copper);"></i>
-          <span>Home 1</span>
+          <span class="ctrl-label">Home 1</span>
         </a>
 
+        <!-- RTL Switcher Icon Button -->
+        <button class="ctrl-btn ctrl-btn-icon rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+          <i data-lucide="arrow-left-right" style="width:15px;height:15px;"></i>
+        </button>
+
+        <!-- Theme Change Icon Button -->
+        <button class="ctrl-btn ctrl-btn-icon theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="theme-icon-indicator" style="width:15px;height:15px;"></i>
+        </button>
+
         <!-- Cart Satchel Trigger -->
-        <button class="ctrl-btn cart-toggle-trigger" title="Open Collection Satchel" aria-label="Open Cart">
+        <button class="ctrl-btn ctrl-btn-icon cart-toggle-trigger" title="Open Collection Satchel" aria-label="Open Cart">
           <i data-lucide="shopping-bag" style="width:15px;height:15px;color:var(--accent-copper);"></i>
-          <span>Satchel</span>
           <span class="cart-badge-count">0</span>
         </button>
 
-        <!-- Theme Change Button -->
-        <button class="ctrl-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
-          <i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i>
-          <span>Theme</span>
-        </button>
-
         <!-- Reserve Table CTA -->
-        <a href="#location" class="ctrl-btn ctrl-btn-reserve reserve-table-trigger">
+        <a href="#location" class="ctrl-btn ctrl-btn-reserve reserve-table-trigger" title="Reserve Vault Table">
           <i data-lucide="calendar-check" style="width:14px;height:14px;"></i>
-          <span>Reserve Vault</span>
+          <span class="ctrl-label">Reserve Vault</span>
         </a>
       </div>
 

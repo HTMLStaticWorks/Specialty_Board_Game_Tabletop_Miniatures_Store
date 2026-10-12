@@ -60,17 +60,24 @@
       </ul>
 
       <div class="straight-controls">
-        <a href="home-2.html" class="ctrl-btn" title="Collector's Vault & Tabletop Guild Edition" style="border-color:var(--border-copper);">
+        <a href="home-2.html" class="ctrl-btn ctrl-btn-vault" title="Collector's Vault & Tabletop Guild Edition">
           <i data-lucide="crown" style="width:14px;height:14px;color:var(--accent-copper);"></i>
-          <span>Home 2 (Vault)</span>
+          <span class="ctrl-label">Vault</span>
         </a>
-        <button class="ctrl-btn cart-toggle-trigger" title="Open Collection Satchel" aria-label="Open Cart">
+        <button class="ctrl-btn ctrl-btn-icon rtl-toggle-btn" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+          <i data-lucide="arrow-left-right" style="width:15px;height:15px;"></i>
+        </button>
+        <button class="ctrl-btn ctrl-btn-icon theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="theme-icon-indicator" style="width:15px;height:15px;"></i>
+        </button>
+        <button class="ctrl-btn ctrl-btn-icon cart-toggle-trigger" title="Open Collection Satchel" aria-label="Open Cart">
           <i data-lucide="shopping-bag" style="width:15px;height:15px;color:var(--accent-copper);"></i>
-          <span>Satchel</span>
           <span class="cart-badge-count">0</span>
         </button>
-        <button class="ctrl-btn theme-toggle-btn" title="Toggle Theme"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i><span>Theme</span></button>
-        <a href="#enquiryFormSection" class="ctrl-btn ctrl-btn-reserve"><i data-lucide="message-square" style="width:14px;height:14px;"></i><span>Dispatch</span></a>
+        <a href="#enquiryFormSection" class="ctrl-btn ctrl-btn-reserve" title="Dispatch Message">
+          <i data-lucide="message-square" style="width:14px;height:14px;"></i>
+          <span class="ctrl-label">Dispatch</span>
+        </a>
       </div>
 
       <button class="straight-hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
