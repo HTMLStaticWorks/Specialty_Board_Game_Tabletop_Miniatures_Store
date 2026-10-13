@@ -103,8 +103,19 @@
       <li><a href="events.html" class="drawer-nav-link"><span>06. Game Nights</span><span class="number">EVENTS</span></a></li>
       <li><a href="contact.html" class="drawer-nav-link"><span>07. Clubhouse & Contact</span><span class="number">VISIT</span></a></li>
     </ul>
-    <div class="mb-3">
-      <button class="ctrl-btn theme-toggle-btn w-100"><i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i><span>Theme</span></button>
+    <div class="d-flex gap-2 mb-3">
+      <button class="ctrl-btn cart-toggle-trigger flex-grow-1" title="Open Collection Satchel" aria-label="Open Satchel">
+        <i data-lucide="shopping-bag" style="width:15px;height:15px;color:var(--accent-copper);"></i>
+        <span>Satchel (<span class="cart-badge-count">0</span>)</span>
+      </button>
+      <button class="ctrl-btn theme-toggle-btn flex-grow-1" title="Toggle Theme" aria-label="Toggle Theme">
+        <i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i>
+        <span>Theme</span>
+      </button>
+      <button class="ctrl-btn rtl-toggle-btn flex-grow-1" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+        <i data-lucide="arrow-left-right" style="width:14px;height:14px;"></i>
+        <span class="rtl-label-indicator">RTL</span>
+      </button>
     </div>
     <a href="#suppliesSection" class="btn-primary-club w-100 mb-3" onclick="document.getElementById('mobileDrawer').classList.remove('open');document.getElementById('drawerBackdrop').classList.remove('active');">
       <i data-lucide="palette" style="width:16px;height:16px;"></i> Browse Studio Supplies

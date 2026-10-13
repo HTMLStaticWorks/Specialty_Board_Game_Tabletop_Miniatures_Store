@@ -120,13 +120,17 @@
       <li><a href="#location" class="drawer-nav-link"><span>08. Sanctuary Location</span><span class="number">HYD</span></a></li>
     </ul>
     <div class="d-flex gap-2 mb-3">
-      <button class="ctrl-btn cart-toggle-trigger flex-grow-1">
-        <i data-lucide="shopping-bag" style="width:16px;height:16px;color:var(--accent-copper);"></i>
+      <button class="ctrl-btn cart-toggle-trigger flex-grow-1" title="Open Collection Satchel" aria-label="Open Satchel">
+        <i data-lucide="shopping-bag" style="width:15px;height:15px;color:var(--accent-copper);"></i>
         <span>Satchel (<span class="cart-badge-count">0</span>)</span>
       </button>
-      <button class="ctrl-btn theme-toggle-btn flex-grow-1">
+      <button class="ctrl-btn theme-toggle-btn flex-grow-1" title="Toggle Theme" aria-label="Toggle Theme">
         <i data-lucide="sun" class="theme-icon-indicator" style="width:14px;height:14px;"></i>
         <span>Theme</span>
+      </button>
+      <button class="ctrl-btn rtl-toggle-btn flex-grow-1" title="Toggle RTL / LTR Direction" aria-label="Toggle RTL Direction">
+        <i data-lucide="arrow-left-right" style="width:14px;height:14px;"></i>
+        <span class="rtl-label-indicator">RTL</span>
       </button>
     </div>
     <a href="#location" class="btn-primary-club w-100 reserve-table-trigger mb-3">
